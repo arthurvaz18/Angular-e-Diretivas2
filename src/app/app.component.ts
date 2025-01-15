@@ -9,5 +9,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Angular-e-Diretivas2';
+
+  clicou(input: HTMLInputElement) {
+    console.log(input.value);
+    input.value = 'Atualizado';
+  }
 }
