@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -9,14 +9,28 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  @ViewChild('meuInput')
+  meuInputEl!: ElementRef<HTMLInputElement>;
 
-}
-const funcaoPai = () => {
-  let pai = 'pai';
+  @ViewChild('minhaDiv')
+  minhaDivEl!: ElementRef<HTMLDivElement>;
 
-  const funcaoFilho = () =>{
-    let filho = 'filho';
+  updateInputText(){
+  this.meuInputEl.nativeElement.value ='Texto Atualizado!';
+  console.log('atualizou');
+  }
 
-    pai = 'teste';
+  focus(){
+  this.meuInputEl.nativeElement.focus();
+  console.log('deu foco');
+  }
+
+  updateDivContent(){
+      this.minhaDivEl.nativeElement.textContent = 'Conteudo Atualizado!!!'
+    console.log('Conteudo');
+
   }
 }
+
+
+

@@ -1,14 +1,11 @@
-<div class="pai" >
-  Pai: <input #inputPai ngModel />
+Meu input <input type="text" #meuInput >
 
-  Pai: {{ inputFilho  ?.value }}
+<button (click)="updateInputText()">Atualizar</button>
+<br />
+<button (click)="focus()">Foco</button>
 
-  <div class="filho">
-    Filho: <input #inputFilho ngModel />
-
-    Filho {{ inputPai?.value }}
-  </div>
+<div #minhaDiv>
+  Conteudo Inicial..
 </div>
 
-
-<h1>Olá</h1>
+<button (click)="updateDivContent()">Mudar o contexto</button>
