@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
 
-  clicou(input: HTMLInputElement) {
-    console.log(input.value);
-    input.value = 'Atualizado';
+}
+const funcaoPai = () => {
+  let pai = 'pai';
+
+  const funcaoFilho = () =>{
+    let filho = 'filho';
+
+    pai = 'teste';
   }
 }

@@ -1,7 +1,14 @@
-<input
-  type="text" #meuInput ngModel
-/>
+<div class="pai" >
+  Pai: <input #inputPai ngModel />
 
-valor: {{ meuInput.value }}
+  Pai: {{ inputFilho  ?.value }}
 
-<button (click)="clicou(meuInput)">Atualizar</button>
+  <div class="filho">
+    Filho: <input #inputFilho ngModel />
+
+    Filho {{ inputPai?.value }}
+  </div>
+</div>
+
+
+<h1>Olá</h1>
