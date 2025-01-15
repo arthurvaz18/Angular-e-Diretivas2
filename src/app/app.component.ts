@@ -1,34 +1,22 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {FormsModule} from "@angular/forms";
+import {FilhoComponent} from "./filho/filho.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, FilhoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  @ViewChild('meuInput')
-  meuInputEl!: ElementRef<HTMLInputElement>;
+  @ViewChild('filhoComp')
+  filhoCompRef!: FilhoComponent;
 
-  @ViewChild('minhaDiv')
-  minhaDivEl!: ElementRef<HTMLDivElement>;
-
-  updateInputText(){
-  this.meuInputEl.nativeElement.value ='Texto Atualizado!';
-  console.log('atualizou');
-  }
-
-  focus(){
-  this.meuInputEl.nativeElement.focus();
-  console.log('deu foco');
-  }
-
-  updateDivContent(){
-      this.minhaDivEl.nativeElement.textContent = 'Conteudo Atualizado!!!'
-    console.log('Conteudo');
-
+  hellho(){
+    this.filhoCompRef.dizerOi();
+    this.filhoCompRef.message = 'Eu disse oi';
+    console.log('disse oi');
   }
 }
 
