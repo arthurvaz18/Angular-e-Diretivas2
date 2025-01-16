@@ -1,6 +1,8 @@
-Meu Input
-<input
-  type="text"
-  #meuInput />
+<button
+  #meuButton
+  *ngFor="let btn of buttonList"
+(click)="changeColor($event)">
+  {{ btn }}
+</button>
 
-
+<button (click)="resetButton()">Resetar</button>
