@@ -21,11 +21,11 @@ export class AppComponent implements AfterViewInit{
   buttonEl!: QueryList<ElementRef<HTMLButtonElement>>
 
   ngAfterViewInit() {
-    console.log(this.buttonEl.toArray());
+    console.log(this.buttonEl);
 
-    const primeiro = this.buttonEl.toArray()[0];
-
-    primeiro.nativeElement.style.background = 'blue';
+    this.buttonEl.changes.subscribe((result)=>{
+      console.log(result);
+    })
   }
 
   changeColor(event: Event){
@@ -41,6 +41,20 @@ export class AppComponent implements AfterViewInit{
       btnEl.nativeElement.style.background = '';
       btnEl.nativeElement.style.color = 'black';
     })
+  }
+  first(){
+    //const primeiro = this.buttonEl.get(0)
+
+    //const  primeiro =
+      //this.buttonEl.find((btnEl)=>btnEl.nativeElement.className === 'btn-0');
+
+    const primeiro =
+      this.buttonEl.toArray()[0];
+
+    console.log(primeiro);
+  }
+  remover(){
+    this.buttonList.shift();
   }
 }
 
